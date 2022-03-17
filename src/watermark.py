@@ -8,7 +8,6 @@ import glob
 #Set default to no resize
 global resize_yn
 resize_yn = False
-print(resize_yn)
 
 #----------------
 # Define button commands
@@ -31,13 +30,11 @@ def destFolder():
 def resize_yes():
   global resize_yn
   resize_yn = True
-  print(resize_yn)
-
-#Called wehn resize radio button set to "No"
+  
+#Called when resize radio button set to "No"
 def resize_no():
   global resize_yn
   resize_yn = False 
-  print(resize_yn)
     
 #Run program
 def watermark():
