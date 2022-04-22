@@ -44,7 +44,8 @@ def watermark():
   # global resize_yn
   path_in = sourcePath + '\\*.jpg'
   text = textEntry.get()
-  qual = int(photoQual.get())
+  # var for user input for photo quality
+  # qual = int(photoQual.get())
   
   ### Adds option to resize photo. Keeping this code in case it needs to be reused later. Will need to un-comment
   # resize radio button functions above, and GUI code down below as well. ###
@@ -82,7 +83,7 @@ def watermark():
     im_index = im.rfind('\\')
     im_name = im[(im_index + 1):]
     path_out = destPath + '\\' + im_name
-    im_original.save(path_out, quality=qual)
+    im_original.save(path_out, quality=70)
   root.destroy()
 
     
@@ -165,18 +166,18 @@ textLabel.grid(row=4, column=0, padx=10, sticky=W)
 textEntry = Entry(root, width=105)
 textEntry.grid(row=5, column=0, padx=10, pady=20, columnspan=1, sticky=W)
 
-# create photo quality label
-qualityLabel1 = Label(root, text='Output Photo Quality:')
-qualityLabel1.grid(row=6, column=0, padx=10, sticky=W)
+# # create photo quality label
+# qualityLabel1 = Label(root, text='Output Photo Quality:')
+# qualityLabel1.grid(row=6, column=0, padx=10, sticky=W)
 
-# create photo quality label % sign
-qualityLabel2 = Label(root, text='%')
-qualityLabel2.grid(row=6, column=0, padx=160, sticky=W)
+# # create photo quality label % sign
+# qualityLabel2 = Label(root, text='%')
+# qualityLabel2.grid(row=6, column=0, padx=160, sticky=W)
 
-# create photo quality entry box
-photoQual = Entry(root, width=3)
-photoQual.insert(END, '70')
-photoQual.grid(row=6, column=0, padx=135, pady=20, columnspan=1, sticky=W)
+# # create photo quality entry box
+# photoQual = Entry(root, width=3)
+# photoQual.insert(END, '70')
+# photoQual.grid(row=6, column=0, padx=135, pady=20, columnspan=1, sticky=W)
 
 # #create radio button label
 # radioLabel = Label(root, text="Resize for PowerPoint (960x640)?")
@@ -190,7 +191,7 @@ photoQual.grid(row=6, column=0, padx=135, pady=20, columnspan=1, sticky=W)
 
 # create save button
 saveButton = Button(root, text="Run", width=10, command=watermark)
-saveButton.grid(row=6, column=2, padx=10, pady=10)
+saveButton.grid(row=5, column=2, padx=10, pady=10)
 
 # run mainloop
 root.mainloop()
